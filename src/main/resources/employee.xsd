@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://com.presta.soapweb/employee"
+           xmlns="http://com.presta.soapweb/employee"
+           elementFormDefault="qualified">
+
+    <!-- Employee Information Complex Type -->
+    <xs:complexType name="EmployeeInfo">
+        <xs:sequence>
+            <xs:element name="ID" type="xs:string"/>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Email" type="xs:string"/>
+            <xs:element name="Phone" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Service Status Complex Type -->
+    <xs:complexType name="ServiceStatus">
+        <xs:sequence>
+            <xs:element name="Status" type="xs:string"/>
+            <xs:element name="Message" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Add Employee Request Complex Type -->
+    <xs:complexType name="AddEmployeeRequest">
+        <xs:sequence>
+            <xs:element name="Employee" type="EmployeeInfo"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Add Employee Response Complex Type -->
+    <xs:complexType name="AddEmployeeResponse">
+        <xs:sequence>
+            <xs:element name="Response" type="ServiceStatus"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Update Employee Request Complex Type -->
+    <xs:complexType name="UpdateEmployeeRequest">
+        <xs:sequence>
+            <xs:element name="Employee" type="EmployeeInfo"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Update Employee Response Complex Type -->
+    <xs:complexType name="UpdateEmployeeResponse">
+        <xs:sequence>
+            <xs:element name="Response" type="ServiceStatus"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Delete Employee Request Complex Type -->
+    <xs:complexType name="DeleteEmployeeRequest">
+        <xs:sequence>
+            <xs:element name="ID" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Delete Employee Response Complex Type -->
+    <xs:complexType name="DeleteEmployeeResponse">
+        <xs:sequence>
+            <xs:element name="Response" type="ServiceStatus"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- CRUD Operations -->
+    <xs:element name="AddEmployee">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Request" type="AddEmployeeRequest"/>
+                <xs:element name="Response" type="AddEmployeeResponse"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="UpdateEmployee">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Request" type="UpdateEmployeeRequest"/>
+                <xs:element name="Response" type="UpdateEmployeeResponse"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="DeleteEmployee">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Request" type="DeleteEmployeeRequest"/>
+                <xs:element name="Response" type="DeleteEmployeeResponse"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>
