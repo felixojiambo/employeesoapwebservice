@@ -57,7 +57,28 @@
 					</excludes>
 				</configuration>
 			</plugin>
+			<!-- JAXB2 Plugin Configuration -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<version>0.14.0</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<schemaDirectory>${project.basedir}/src/main/resources</schemaDirectory>
+					<outputDirectory>${project.basedir}/src/main/java</outputDirectory>
+					<clearOutputDir>false</clearOutputDir>
+					<schemaName>com/presta/soapweb</schemaName>
+					<generatePackage>com.presta.soapweb.models</generatePackage>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
+
 
 </project>

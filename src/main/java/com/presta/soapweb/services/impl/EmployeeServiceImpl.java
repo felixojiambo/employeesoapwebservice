@@ -9,8 +9,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
     @Override
-    public void AddEmployee(Employee employee) {
+    public Employee AddEmployee(Employee employee) {
         employeeRepository.save(employee);
+        return employee;
     }
 
     @Override
