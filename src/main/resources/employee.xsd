@@ -11,8 +11,6 @@
             <xs:element name="Name" type="xs:string"/>
             <xs:element name="Email" type="xs:string"/>
             <xs:element name="Phone" type="xs:string"/>
-<!--            <xs:element name="department" type="xs:string"/>-->
-<!--            <xs:element name="address" type="xs:string"/>-->
         </xs:sequence>
     </xs:complexType>
 
@@ -66,6 +64,21 @@
         </xs:sequence>
     </xs:complexType>
 
+    <!-- GetEmployeeById Request Complex Type -->
+    <xs:complexType name="GetEmployeeByIdRequest">
+        <xs:sequence>
+            <xs:element name="EmployeeId" type="xs:long"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- GetEmployeeById Response Complex Type -->
+    <xs:complexType name="GetEmployeeByIdResponse">
+        <xs:sequence>
+            <xs:element name="Employee" type="EmployeeInfo"/>
+            <xs:element name="Response" type="ServiceStatus"/>
+        </xs:sequence>
+    </xs:complexType>
+
     <!-- CRUD Operations -->
     <xs:element name="AddEmployee">
         <xs:complexType>
@@ -90,6 +103,15 @@
             <xs:sequence>
                 <xs:element name="Request" type="DeleteEmployeeRequest"/>
                 <xs:element name="Response" type="DeleteEmployeeResponse"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="GetEmployeeById">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Request" type="GetEmployeeByIdRequest"/>
+                <xs:element name="Response" type="GetEmployeeByIdResponse"/>
             </xs:sequence>
         </xs:complexType>
     </xs:element>

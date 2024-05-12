@@ -10,7 +10,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     EmployeeRepository employeeRepository;
     @Override
     public void AddEmployee(Employee employee) {
-        employeeRepository.save(employee)
+        employeeRepository.save(employee);
     }
 
     @Override
