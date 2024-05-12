@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://com.presta.soapweb/employee"
-           xmlns="http://com.presta.soapweb/employee"
+           targetNamespace="http://com.presta.soapweb"
+           xmlns="http://com.presta.soapweb"
            elementFormDefault="qualified">
 
     <!-- Employee Information Complex Type -->
     <xs:complexType name="EmployeeInfo">
         <xs:sequence>
-            <xs:element name="ID" type="xs:string"/>
+            <xs:element name="EmployeeId" type="xs:long"/>
             <xs:element name="Name" type="xs:string"/>
             <xs:element name="Email" type="xs:string"/>
             <xs:element name="Phone" type="xs:string"/>
+<!--            <xs:element name="department" type="xs:string"/>-->
+<!--            <xs:element name="address" type="xs:string"/>-->
         </xs:sequence>
     </xs:complexType>
 
